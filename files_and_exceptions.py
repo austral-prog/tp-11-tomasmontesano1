@@ -1,4 +1,4 @@
-def read_file_to_dict(filename):
+def read_file_to_dict(datos):
     diccionario={}
     try:
         with open(datos, 'r') as file:
