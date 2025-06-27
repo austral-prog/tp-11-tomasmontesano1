@@ -17,8 +17,11 @@ def read_file_to_dict(filename):
                             diccionario[clave].append(valor)
                     contador = i+1
         return diccionario
-    except FileNotFoundError(f"El archivo '{datos}' no existe"):
+    except FileNotFoundError():
         raise (f"El archivo '{datos}' no existe")
+
+
+
 def process_dict(data):
     for producto, elementos in data.items():
         a =0
