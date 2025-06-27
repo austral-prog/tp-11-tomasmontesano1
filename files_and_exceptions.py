@@ -15,7 +15,7 @@ def read_file_to_dict(filename):
                             dictionary[key] = [value]
                         else:
                             dictionary[key].append(value)
-                    inicio=i+1
+                    inicio = i+1
         return dictionary
     except FileNotFoundError:
         raise FileNotFoundError
