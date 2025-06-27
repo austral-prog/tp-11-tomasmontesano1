@@ -1,5 +1,5 @@
 def read_file_to_dict(filename):
-    diccionario = dict()
+    dictionary = dict()
     try:
         with open(datos, 'r') as file:
             linea = file.readline()
@@ -11,12 +11,12 @@ def read_file_to_dict(filename):
                     if pos != -1:
                         key = venta[:pos]
                         value = float(venta[pos+1:])
-                        if key not in diccionario:
-                            diccionario[key] = [value]
+                        if key not in dictionary:
+                            dictionary[key] = [value]
                         else:
-                            diccionario[key].append(value)
-                    inicio = i+1
-        return diccionario
+                            dictionary[key].append(value)
+                    inicio=i+1
+        return dictionary
     except FileNotFoundError:
         raise FileNotFoundError
 
