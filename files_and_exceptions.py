@@ -3,19 +3,19 @@ def read_file_to_dict(filename):
     try:
         with open(datos, 'r') as file:
             l = file.readline()
-            contador = 0
+            inicio = 0
             for i in range(len(l)):
-                if l[i] == ";":
-                    venta = l[contador:i]
+                if linea[i] == ";":
+                    venta = l[inicio:i]
                     a = venta.find(":")
                     if a != -1:
                         clave = venta[:a]
-                        value = float(venta[a+1:])
-                        if clave in diccionario:
-                            diccionario[clave].append(value)
+                        valor = float(venta[a+1:])
+                        if clave not in diccionario:
+                            diccionario[clave] = [valor]
                         else:
-                            diccionario[clave] = [value]
-                    contador = i+1
+                            diccionario[clave].append(valor)
+                    inicio = i+1
         return diccionario
     except FileNotFoundError:
         raise FileNotFoundError
