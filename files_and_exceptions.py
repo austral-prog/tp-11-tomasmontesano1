@@ -7,14 +7,14 @@ def read_file_to_dict(filename):
             for i in range(len(linea)):
                 if linea[i] == ";":
                     venta = linea[inicio:i]
-                    a = venta.find(":")
-                    if a != -1:
-                        clave = venta[:a]
-                        value = float(venta[a+1:])
-                        if clave not in diccionario:
-                            diccionario[clave] = [value]
+                    pos = venta.find(":")
+                    if pos != -1:
+                        key = venta[:pos]
+                        value = float(venta[pos+1:])
+                        if key not in diccionario:
+                            diccionario[key] = [value]
                         else:
-                            diccionario[clave].append(value)
+                            diccionario[key].append(value)
                     inicio = i+1
         return diccionario
     except FileNotFoundError:
