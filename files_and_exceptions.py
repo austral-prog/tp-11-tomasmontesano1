@@ -1,7 +1,8 @@
 def read_file_to_dict(datos):
     diccionario={}
+    with open(datos, 'r') as file:
     try:
-        with open(datos, 'r') as file:
+        
             linea = file.readline()
             contador=0
             for i in range(len(linea)):
