@@ -1,25 +1,24 @@
 def read_file_to_dict(filename):
-    diccionario = {}
+    diccionario = dict()
     try:
         with open(datos, 'r') as file:
-            l = file.readline()
+            linea = file.readline()
             inicio = 0
-            for i in range(len(l)):
+            for i in range(len(linea)):
                 if linea[i] == ";":
-                    venta = l[inicio:i]
+                    venta = linea[inicio:i]
                     a = venta.find(":")
                     if a != -1:
-                        clave = venta[:a]
-                        valor = float(venta[a+1:])
-                        if clave not in diccionario:
-                            diccionario[clave] = [valor]
+                        key = venta[:a]
+                        value = float(venta[a+1:])
+                        if key not in diccionario:
+                            diccionario[key] = [value]
                         else:
-                            diccionario[clave].append(valor)
+                            diccionario[key].append(value)
                     inicio = i+1
         return diccionario
     except FileNotFoundError:
         raise FileNotFoundError
-
 
 
 def process_dict(data):
