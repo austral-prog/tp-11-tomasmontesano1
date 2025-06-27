@@ -9,12 +9,12 @@ def read_file_to_dict(filename):
                     venta = linea[inicio:i]
                     a = venta.find(":")
                     if a != -1:
-                        key = venta[:a]
+                        clave = venta[:a]
                         value = float(venta[a+1:])
-                        if key not in diccionario:
-                            diccionario[key] = [value]
+                        if clave not in diccionario:
+                            diccionario[clave] = [value]
                         else:
-                            diccionario[key].append(value)
+                            diccionario[clave].append(value)
                     inicio = i+1
         return diccionario
     except FileNotFoundError:
