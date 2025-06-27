@@ -18,7 +18,7 @@ def read_file_to_dict(filename):
                     contador = i+1
         return diccionario
     except FileNotFoundError:
-        raise FileNotFoundError
+        raise (f"El archivo '{datos}' no existe")
 def process_dict(data):
     for producto, elementos in data.items():
         a =0
